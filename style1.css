@@ -1,0 +1,348 @@
+:root{
+    --colo-primery: #ffffff;
+    --color-secondary: #6f6a6a;
+    --color-text: #222222;
+    --ff-titre: "Softmaker", sans-serif;
+    --ff-textes: "Gascogne", sans-serif;
+}
+
+@font-face{
+    font-family: "Gascogne";
+    src: url(../font/SoftMaker\ -\ GascogneSerial.otf)
+
+}
+
+@font-face{
+    font-family: "Softmaker";
+    src: url(../font/SoftMaker\ -\ GascogneSerial.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+body{
+    overflow: hidden;
+}
+
+mark{
+    background-color: var(--colo-primery);
+}
+
+a{
+    color: inherit
+}
+
+/*-----------------navBar---------*/
+
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 6rem;
+    padding: 1rem 2rem;
+    transition: 0.3 ease-in;
+    background-color: rgba(5, 5, 5, 0.894);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    transform: translateX(100%);
+    animation: show 1s forwards;
+}
+
+.nav .logo{
+    font-family: var(--ff-titre);
+    color: var(--color-text)
+}
+
+.nav .title{
+    font-size: 30px;
+}
+
+.nav .subtitle{
+    font-size: 20px;
+}
+
+.nav .nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav .nav-list .nav-list.item {
+    color:  var(--colo-primery);
+    font-size: 20px;
+    font-family: var(--ff-titre);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav .nav-list .nav-list.item:hover {
+    color: darkgreen;
+    transform: translate(-5px);
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.action-item {
+    position: relative;
+}
+
+.action-item i {
+    color: var(--colo-primery);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 20px;
+}
+
+.action-item .count::after {
+    position: absolute;
+    content: "0";
+    font-size: 10px;
+    background-color: crimson;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-item :hover {
+    color: darkgreen;
+    transform: translateY(-5px);
+}
+
+/*------section 1------*/
+
+.section-one {
+    min-height: 100vh;
+    background-image: url("../Images/IntéTypoFournitures.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem 4rem;
+    position: relative;
+}
+
+.section-one h1 {
+
+    font-size: 60px;
+    font-family: var(--ff-titre);
+    color: var(--colo-primery);
+    font-weight: 800;
+    letter-spacing: 1px;
+    animation: show 1s forwards;
+    transform: translateX(-100%);
+
+}
+
+@keyframes show {
+    to {transform: translateX(0);
+    }
+}
+
+.section-one {
+    font-family: var(--ff-textes);
+    font-size: 14px;
+    color: var(--colo-primery);
+    max-width: 60%;
+    line-height: 25px;
+    transform: translateX(-100%);
+    animation: show 1s forwards;
+}
+
+/*------section 2------*/
+
+.section-tow {
+    max-width: 60%;
+    margin: 6rem auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.section-tow .text {
+    font-family: var(--ff-textes);
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.section-tow .intro{
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: 800;
+    color: var(--color-secondary);
+}
+
+.section-tow h2{
+    font-family: var(--ff-titre);
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 800;
+}
+
+.section-tow .aside {
+    color: var(--colo-primery);
+    background-color: var(--color-secondary);
+    padding: 2rem;
+    text-align: justify;
+}
+
+/*---------section 3--------*/
+
+.section-three {
+    max-height: 80%;
+    margin: 6rem auto 35rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+}
+
+.flex-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.img-container {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    box-shadow: 2px 5px 15px 5px black;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.img-container:hover {
+    transform: scale(1.02);
+}
+
+.img-container .img {
+    max-height: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-container h3 {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--ff-titre);
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 900;
+    width: 80%;
+    text-align: center;
+    color: var(--colo-primery);
+    text-shadow: 3px 5px 2px #474747;
+
+}
+
+.section-three p {
+    max-width: 70%;
+    margin: 1rem auto;
+    font-family: var(--color-text);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--color-text);
+}
+
+.section-three h2 {
+    font-family: var(--ff-titre);
+    font-size: 30px;
+    line-height: 32px;
+    margin-left: 10rem;
+}
+
+.section-three .clip-path {
+    clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+    background-image: url(../Images/Archi_int_GR9_Antoine_Praquin.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30rem;
+    min-width: 100vw;
+}
+
+/*--footer---*/
+
+footer {
+    background-color: var(--color-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-left: 4rem;
+}
+
+Footer .list {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--colo-primery);
+}
+
+footer .list li {
+    transition: 0.3s;
+
+}
+
+footer .list li:hover {
+    color: dar
+}
+
+footer .list li a {
+    cursor: pointer;
+}
+
+footer .list .logo {
+    letter-spacing: 1px;
+}
+
+footer .list .tel {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+footer .list .contact {
+    background-color: var(--colo-primery);
+    padding: 0,5;
+    max-width: max-content;
+    border-radius: 0.5rem;
+    transition: 0.3;
+}
+
+footer .list .contact:hover {
+    transform: translateX(-10px);
+}
+
+footer .list .contact a {
+    color: var(--color-secondary);
+}
